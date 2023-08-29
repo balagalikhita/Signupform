@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import Navbar from './navbar'
 import './App.css'
 import axios from 'axios'
 const App = () => {
@@ -20,6 +21,7 @@ setData({...data,[e.target.name]:e.target.value})
   return (
     <div className='container'>
       <center>
+        <Navbar/>
       <form onSubmit={submitHandler}> 
         <h2>Sign Up</h2>
         <input type='text' name="username" value={username} placeholder="username" onChange={changehandler} required/><br/>
