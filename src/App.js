@@ -16,7 +16,7 @@ setData({...data,[e.target.name]:e.target.value})
   const submitHandler=e=>{
     e.preventDefault();
     console.log(data);
-    axios.post('',data).then(()=>alert("Sign up successfully"));
+    axios.post('https://react-practice-d08b5-default-rtdb.firebaseio.com/register.json',data).then(()=>alert("Sign up successfully"));
   }
   return (
     <div className='container'>
@@ -29,7 +29,7 @@ setData({...data,[e.target.name]:e.target.value})
       <input type='password' name="password" value={password} placeholder="password" onChange={changehandler} required/><br/>
       <input type='password' name="confirmPassword" value={confirmPassword} placeholder="confirmPassword" onChange={changehandler} required/><br/>
       {password!==confirmPassword?<p style={{"color":"red","fontSize":"10px"}}>Passwords are not matching</p>:null}
-      <input className="submit" type="submit" name="submit"/>
+      <input className="submit" type="submit" name="submit" style={{"cursor":"pointer"}}/>
 
       </form>
       </center>
